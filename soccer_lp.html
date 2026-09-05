@@ -1,0 +1,2416 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TRINITY URAWA | サッカー選手専門パーソナルトレーニング 東京</title>
+  <meta name="description" content="サッカー選手のための専門パーソナルトレーニングジム。スピード・瞬発力・怪我予防・体幹強化を解剖学に基づいたアプローチで実現。東京・完全個室対応。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold:     #B87333;
+      --gold-h:   #A86528;
+      --gold-l:   #E8D5B7;
+      --gold-bg:  #FDF8F2;
+      --neutral:  #a09880;
+      --text:     #333333;
+      --text-l:   #666666;
+      --text-ll:  #999999;
+      --bg:       #ffffff;
+      --bg-gray:  #fafafa;
+      --border:   #f0f0f0;
+      --dark:     #222222;
+      --font-en:  'Montserrat', sans-serif;
+      --font-jp:  'Noto Sans JP', sans-serif;
+      --radius:   12px;
+      --shadow:   0 4px 24px rgba(0,0,0,0.07);
+      --shadow-h: 0 8px 40px rgba(0,0,0,0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-jp);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+    .section { padding: 3.5rem 0; }
+    .section-gray { background: var(--bg-gray); }
+
+    /* ── ACCENT LINE ── */
+    .accent-line {
+      width: 48px; height: 3px;
+      background: linear-gradient(90deg, var(--gold), #d4a96a);
+      margin: 1rem auto 0;
+      display: block;
+    }
+    .accent-line.left { margin-left: 0; }
+
+    /* ── SECTION HEADER ── */
+    .sec-label {
+      font-family: var(--font-en);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .sec-title {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--text);
+    }
+
+    .sec-lead {
+      font-size: 0.92rem;
+      color: var(--text-l);
+      line-height: 2;
+      margin-top: 1rem;
+    }
+
+    .sec-header {
+      text-align: center;
+      margin-bottom: 2.25rem;
+    }
+
+    /* ── BADGE ── */
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border: 1.5px solid var(--gold);
+      border-radius: 6px;
+      padding: 0.3rem 1rem;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      margin-bottom: 0.8rem;
+    }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      font-family: var(--font-jp);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.25s;
+      line-height: 1;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: #fff;
+      box-shadow: 0 10px 28px rgba(184,115,51,0.25);
+    }
+    .btn-primary:hover {
+      background: var(--gold-h);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 36px rgba(184,115,51,0.32);
+    }
+    .btn-outline {
+      background: rgba(255,255,255,0.85);
+      color: var(--gold);
+      border: 2px solid var(--gold);
+    }
+    .btn-outline:hover {
+      background: var(--gold);
+      color: #fff;
+    }
+    .btn-line {
+      background: #06c755;
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(6,199,85,0.22);
+    }
+    .btn-line:hover {
+      background: #04a344;
+      transform: translateY(-2px);
+    }
+    .btn-sm {
+      padding: 0.6rem 1.4rem;
+      font-size: 0.82rem;
+      border-radius: 8px;
+    }
+
+    /* ═══════════════════════════════════════
+       HEADER
+    ═══════════════════════════════════════ */
+    #header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow 0.3s;
+    }
+    #header.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.07); }
+
+    .header-top {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+    .logo-main {
+      font-family: var(--font-en);
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: var(--text);
+    }
+    .logo-main span { color: var(--gold); }
+    .logo-sub {
+      font-size: 0.6rem;
+      color: var(--text-ll);
+      letter-spacing: 0.15em;
+      font-family: var(--font-en);
+      font-weight: 500;
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    .header-nav a {
+      font-size: 0.82rem;
+      color: var(--text-l);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .header-nav a:hover { color: var(--gold); }
+
+    .header-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    /* ═══════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════ */
+    #hero {
+      position: relative;
+      min-height: 48vh;
+      padding-top: 68px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    /* ── HERO SLIDESHOW ── */
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      z-index: 0;
+      opacity: 0;
+      animation: heroFade 10s linear infinite;
+    }
+    .hero-slide:nth-child(1) { animation-delay: 0s; }
+    .hero-slide:nth-child(2) { animation-delay: 5s; }
+
+    @keyframes heroFade {
+      0%   { opacity: 0; }
+      5%   { opacity: 1; }
+      45%  { opacity: 1; }
+      55%  { opacity: 0; }
+      100% { opacity: 0; }
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.52);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      width: 100%;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .hero-eyebrow-line {
+      width: 36px; height: 1.5px;
+      background: var(--gold);
+    }
+    .hero-eyebrow span {
+      font-family: var(--font-en);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .hero-title {
+      font-size: clamp(1.9rem, 3.5vw, 2.9rem);
+      font-weight: 800;
+      line-height: 1.35;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+    .hero-title em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: 0.92rem;
+      color: var(--text-l);
+      line-height: 2;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-pillars {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1.5rem 0 2.25rem;
+    }
+    .pillar {
+      font-size: 0.78rem;
+      font-weight: 600;
+      border: 1.5px solid var(--gold-l);
+      border-radius: 999px;
+      padding: 0.35rem 0.9rem;
+      color: var(--neutral);
+      background: var(--gold-bg);
+    }
+
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* hero 画像エリア */
+    .hero-visual {
+      position: relative;
+    }
+    .hero-img-main {
+      width: 100%;
+      aspect-ratio: 4/5;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: linear-gradient(145deg, #f5ede0 0%, #e8d5b7 100%);
+      position: relative;
+    }
+    .hero-img-main::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(184,115,51,0.06) 100%);
+    }
+    /* フィールド装飾（薄め） */
+    .hero-field-deco {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.08;
+    }
+    .hero-field-deco svg { width: 60%; height: 60%; }
+
+    .hero-img-badge {
+      position: absolute;
+      bottom: -1.5rem;
+      left: -1.5rem;
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-h);
+      padding: 1.2rem 1.5rem;
+      text-align: center;
+    }
+    .hero-img-badge strong {
+      display: block;
+      font-family: var(--font-en);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .hero-img-badge span {
+      font-size: 0.7rem;
+      color: var(--text-ll);
+      margin-top: 0.25rem;
+      display: block;
+    }
+
+    .hero-img-tag {
+      position: absolute;
+      top: 1.5rem;
+      right: -1.5rem;
+      background: var(--gold);
+      color: #fff;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(184,115,51,0.3);
+    }
+    .hero-img-tag strong {
+      display: block;
+      font-family: var(--font-en);
+      font-size: 1.4rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .hero-img-tag span { font-size: 0.65rem; }
+
+    /* ═══════════════════════════════════════
+       CAMPAIGN BANNER
+    ═══════════════════════════════════════ */
+    #campaign {
+      background: var(--gold);
+      padding: 1.1rem 2rem;
+      text-align: center;
+    }
+    #campaign p {
+      color: #fff;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    #campaign a {
+      color: #fff;
+      text-decoration: underline;
+      margin-left: 0.75rem;
+    }
+
+    /* ═══════════════════════════════════════
+       ABOUT
+    ═══════════════════════════════════════ */
+    #about .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: linear-gradient(145deg, #f0ebe3, #e4d5be);
+      position: relative;
+    }
+    .about-img-inner {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6rem;
+      opacity: 0.15;
+    }
+
+    .about-content .sec-title { text-align: left; }
+
+    .about-main-copy {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.5;
+      margin: 1.25rem 0 1rem;
+    }
+
+    .about-pillars {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin: 1.25rem 0 1rem;
+    }
+    .about-pillar-tag {
+      background: var(--gold-bg);
+      border: 1.5px solid var(--gold-l);
+      border-radius: 999px;
+      padding: 0.4rem 1rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .about-goals {
+      list-style: none;
+      margin: 1rem 0 1.5rem;
+    }
+    .about-goals li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.5rem 0;
+      font-size: 0.88rem;
+      color: var(--text-l);
+      border-bottom: 1px solid var(--border);
+    }
+    .about-goals li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 8px; height: 8px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    /* ═══════════════════════════════════════
+       SOLUTION
+    ═══════════════════════════════════════ */
+    #solution .solution-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      justify-items: stretch;
+    }
+    /* 5枚目カードを中央の列に配置 */
+    #solution .solution-grid .solution-card:nth-child(4) {
+      grid-column: 1;
+    }
+    #solution .solution-grid .solution-card:nth-child(5) {
+      grid-column: 2;
+    }
+
+    .solution-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: #fff;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .solution-card:hover {
+      box-shadow: var(--shadow-h);
+      transform: translateY(-4px);
+    }
+
+    .sol-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, #f5ede0, #e8d5b7);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      overflow: hidden;
+    }
+    .sol-img img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .sol-body { padding: 1.5rem; }
+    .sol-num {
+      font-family: var(--font-en);
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+    .sol-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: var(--text);
+    }
+    .sol-desc {
+      font-size: 0.82rem;
+      color: var(--text-l);
+      line-height: 1.85;
+    }
+
+    /* wide card */
+    .solution-card.wide {
+      grid-column: span 3;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+    }
+    .solution-card.wide .sol-img {
+      aspect-ratio: unset;
+      min-height: 180px;
+      font-size: 3.5rem;
+    }
+
+    /* ═══════════════════════════════════════
+       FEATURES
+    ═══════════════════════════════════════ */
+    #features .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    /* 認知トレーニングブロック */
+    .cognitive-block {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3rem;
+      align-items: center;
+      margin-top: 1rem;
+    }
+    .cognitive-video-main {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .cognitive-video-frame {
+      position: relative;
+      border-radius: 1.2rem;
+      overflow: hidden;
+      aspect-ratio: 9/16;
+      max-height: 700px;
+      background: #111;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25), 0 0 0 3px var(--gold-l);
+    }
+    .cognitive-video-frame video {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .cognitive-video-badge {
+      position: absolute;
+      top: 1rem; left: 1rem;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(6px);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 0.4rem 0.8rem;
+      border-radius: 2rem;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .cognitive-video-caption {
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--text-l);
+      font-weight: 600;
+      padding: 0.2rem 0;
+      border-top: 1px solid var(--border);
+      padding-top: 0.8rem;
+    }
+    .cognitive-content .sec-title { text-align: left; }
+    .cognitive-points {
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+    .cognitive-points li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+      color: var(--text-l);
+      line-height: 1.7;
+    }
+    .cognitive-points li::before {
+      content: "・";
+      color: var(--gold);
+      font-size: 1.2rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      line-height: 1.5;
+    }
+    .cognitive-points li .cp-icon {
+      flex-shrink: 0;
+      width: 32px; height: 32px;
+      background: var(--gold-bg);
+      border: 1.5px solid var(--gold-l);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      margin-top: 1px;
+    }
+    .cognitive-points li strong {
+      display: block;
+      color: var(--text);
+      font-size: 0.92rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .feature-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 4/3;
+      transition: transform 0.3s;
+    }
+    .feature-card:hover {
+      transform: translateY(-4px);
+    }
+    .feature-card-media {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+    }
+    .feature-card-bg {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+    .feature-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.15) 55%, transparent 100%);
+    }
+    .feature-card-body {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 1.8rem 1.8rem 2rem;
+      text-align: left;
+    }
+    .feature-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+    .feature-title-line { display: none; }
+    .feature-desc {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.8;
+    }
+
+    /* ═══════════════════════════════════════
+       CASES (PROGRAM)
+    ═══════════════════════════════════════ */
+    #cases .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .case-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: #fff;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .case-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-h);
+    }
+
+    .case-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, #f5ede0, #dfc89e);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+    }
+
+    .case-body { padding: 1.5rem; }
+    .case-phase {
+      font-family: var(--font-en);
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+    .case-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+    .case-desc {
+      font-size: 0.82rem;
+      color: var(--text-l);
+      line-height: 1.85;
+    }
+    .case-items {
+      list-style: none;
+      margin-top: 0.75rem;
+    }
+    .case-items li {
+      font-size: 0.78rem;
+      color: var(--text-l);
+      padding: 0.3rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .case-items li::before {
+      content: '›';
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    /* ═══════════════════════════════════════
+       REVIEWS
+    ═══════════════════════════════════════ */
+    #reviews .reviews-header {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .reviews-rating {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+    .stars { color: #F4B942; font-size: 1.1rem; }
+    .rating-val {
+      font-family: var(--font-en);
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+    .rating-count { font-size: 0.78rem; color: var(--text-ll); }
+
+    .reviews-scroll {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      padding-bottom: 1rem;
+      scrollbar-width: none;
+      margin-top: 2rem;
+    }
+    .reviews-scroll::-webkit-scrollbar { display: none; }
+
+    .review-card {
+      flex-shrink: 0;
+      width: 320px;
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      box-shadow: var(--shadow);
+    }
+    .review-stars { color: #F4B942; font-size: 0.9rem; margin-bottom: 0.75rem; }
+    .review-text {
+      font-size: 0.85rem;
+      color: var(--text-l);
+      line-height: 1.9;
+      margin-bottom: 1.25rem;
+    }
+    .review-profile {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+    }
+    .review-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--gold-bg);
+      border: 2px solid var(--gold-l);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .review-name { font-size: 0.82rem; font-weight: 700; }
+    .review-pos { font-size: 0.72rem; color: var(--gold); margin-top: 1px; }
+    .review-profile { display: none; }
+
+    /* ═══════════════════════════════════════
+       GALLERY (MARQUEE)
+    ═══════════════════════════════════════ */
+    #gallery { overflow: hidden; padding: 2rem 0; }
+    #gallery .sec-title { margin-bottom: 2rem; text-align: center; }
+    .marquee-wrap { overflow: hidden; }
+    .marquee-track {
+      display: flex;
+      gap: 1.25rem;
+      animation: marquee 28s linear infinite;
+      width: max-content;
+    }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-item {
+      flex-shrink: 0;
+      width: 320px;
+      height: 420px;
+      border-radius: var(--radius);
+      background: #111;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+    }
+    .marquee-item img,
+    .marquee-item video {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+
+    /* ── MEDIA FILL ── */
+    .media-fill {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-img-main video.media-fill { z-index: 0; }
+    .hero-img-main::after { z-index: 1; }
+
+    .case-img { position: relative; }
+    .case-img video {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+    }
+    .case-img img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+    }
+
+    .trainer-img img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    /* ═══════════════════════════════════════
+       PRICING
+    ═══════════════════════════════════════ */
+    #pricing .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .price-card {
+      border-radius: var(--radius);
+      border: 1.5px solid var(--border);
+      padding: 2.5rem 2rem;
+      background: #fff;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+    .price-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-h);
+    }
+    .price-card.popular {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 1px var(--gold), var(--shadow);
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: -1px;
+      right: 1.5rem;
+      background: var(--gold);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.3rem 0.9rem;
+      border-radius: 0 0 8px 8px;
+      letter-spacing: 0.05em;
+    }
+
+    .price-label {
+      font-family: var(--font-en);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .price-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      color: var(--text);
+    }
+    .price-amount {
+      font-family: var(--font-en);
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+    .price-amount sub {
+      font-size: 1rem;
+      font-weight: 600;
+      vertical-align: baseline;
+    }
+    .price-period {
+      font-size: 0.78rem;
+      color: var(--text-ll);
+      margin-bottom: 1.75rem;
+    }
+    .price-features {
+      list-style: none;
+      border-top: 1px solid var(--border);
+      padding-top: 1.25rem;
+      margin-bottom: 1.75rem;
+    }
+    .price-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.83rem;
+      color: var(--text-l);
+      padding: 0.45rem 0;
+    }
+    .price-features li::before {
+      content: '✓';
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .pricing-note {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-ll);
+      margin-top: 1.5rem;
+    }
+
+    /* ── PRICING TABLE ── */
+    .pricing-scroll-hint {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-ll);
+      margin-bottom: 0.75rem;
+    }
+    .pricing-table-wrap {
+      overflow-x: auto;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 560px;
+      background: #fff;
+    }
+    .pricing-table thead tr {
+      background: #2b2b2b;
+      color: #fff;
+    }
+    .pricing-table thead th {
+      padding: 0.85rem 1.25rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-align: left;
+      white-space: nowrap;
+    }
+    .pricing-table tbody tr {
+      border-bottom: 1px solid var(--border);
+    }
+    .pricing-table tbody tr:last-child {
+      border-bottom: none;
+    }
+    .pricing-table tbody td {
+      padding: 0.85rem 1.25rem;
+      font-size: 0.88rem;
+      color: var(--text);
+      vertical-align: middle;
+    }
+    .pt-category td {
+      background: #faf8f5;
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.75rem 1.25rem;
+    }
+    .pt-highlight td {
+      background: #fdf8f2;
+    }
+    .pt-price {
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .pt-note {
+      color: var(--text-ll) !important;
+      font-size: 0.82rem !important;
+      white-space: nowrap;
+    }
+
+    /* ═══════════════════════════════════════
+       TRAINER
+    ═══════════════════════════════════════ */
+    #trainer .trainer-grid {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .trainer-img {
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      background: linear-gradient(145deg, #f5ede0, #dfc89e);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      color: rgba(184,115,51,0.25);
+      position: relative;
+    }
+    .trainer-img-label {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(184,115,51,0.3), transparent);
+      padding: 2rem 1.5rem 1rem;
+      font-family: var(--font-en);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .trainer-certs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0 1.25rem;
+    }
+    .cert {
+      background: var(--gold-bg);
+      border: 1.5px solid var(--gold-l);
+      border-radius: 6px;
+      padding: 0.3rem 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .trainer-name {
+      font-size: 1.8rem;
+      font-weight: 900;
+      margin: 0.5rem 0 0.25rem;
+    }
+    .trainer-name-en {
+      font-family: var(--font-en);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-ll);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .trainer-desc {
+      font-size: 0.87rem;
+      color: var(--text-l);
+      line-height: 2;
+      margin: 1rem 0 1.5rem;
+    }
+
+    /* ═══════════════════════════════════════
+       FAQ
+    ═══════════════════════════════════════ */
+    #faq .faq-list { margin-top: 2rem; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1.25rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      cursor: pointer;
+      font-family: var(--font-jp);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+      text-align: left;
+    }
+    .faq-icon {
+      flex-shrink: 0;
+      width: 28px; height: 28px;
+      border: 1.5px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: var(--gold);
+      transition: transform 0.3s, border-color 0.3s;
+      line-height: 1;
+    }
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+      border-color: var(--gold);
+    }
+    .faq-a {
+      display: none;
+      font-size: 0.87rem;
+      color: var(--text-l);
+      line-height: 1.9;
+      padding-bottom: 1.25rem;
+      padding-right: 3rem;
+    }
+    .faq-item.open .faq-a { display: block; }
+
+    /* ═══════════════════════════════════════
+       FLOW
+    ═══════════════════════════════════════ */
+    #flow .flow-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+      margin-top: 3rem;
+    }
+    .flow-steps::before {
+      content: '';
+      position: absolute;
+      top: 32px;
+      left: calc(12.5%);
+      right: calc(12.5%);
+      height: 1.5px;
+      background: linear-gradient(90deg, var(--gold-l), var(--gold), var(--gold-l));
+    }
+
+    .flow-step {
+      text-align: center;
+      padding: 0 1rem;
+    }
+    .flow-circle {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+      position: relative;
+      z-index: 1;
+    }
+    .flow-circle-num {
+      font-family: var(--font-en);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      opacity: 0.8;
+    }
+    .flow-circle-icon { font-size: 1.1rem; line-height: 1; }
+    .flow-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .flow-desc {
+      font-size: 0.78rem;
+      color: var(--text-l);
+      line-height: 1.75;
+    }
+
+    /* ═══════════════════════════════════════
+       ACCESS
+    ═══════════════════════════════════════ */
+    #access .access-grid {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .access-map {
+      width: 100%;
+      aspect-ratio: 16/10;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, #e8f0e8, #d4e0d4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: rgba(0,0,0,0.2);
+      overflow: hidden;
+      position: relative;
+    }
+    .access-map-inner {
+      opacity: 0.25;
+      font-size: 5rem;
+    }
+
+    .access-table { width: 100%; border-collapse: collapse; }
+    .access-table tr { border-bottom: 1px solid var(--border); }
+    .access-table th {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-ll);
+      padding: 0.9rem 0;
+      width: 90px;
+      vertical-align: top;
+      white-space: nowrap;
+    }
+    .access-table td {
+      font-size: 0.88rem;
+      color: var(--text);
+      padding: 0.9rem 0;
+    }
+
+    /* ═══════════════════════════════════════
+       CONTACT
+    ═══════════════════════════════════════ */
+    #contact { background: var(--bg-gray); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-form { background: #fff; border-radius: var(--radius); padding: 2.5rem; box-shadow: var(--shadow); }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: var(--text);
+    }
+    .form-req {
+      font-size: 0.65rem;
+      color: #e04040;
+      margin-left: 0.4rem;
+      font-weight: 700;
+    }
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-family: var(--font-jp);
+      font-size: 0.88rem;
+      color: var(--text);
+      background: var(--bg);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--gold);
+    }
+    .form-textarea { height: 120px; resize: vertical; }
+
+    .contact-cards { display: flex; flex-direction: column; gap: 1.25rem; }
+    .contact-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      box-shadow: var(--shadow);
+    }
+    .contact-card-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      margin-bottom: 0.6rem;
+      font-family: var(--font-en);
+      text-transform: uppercase;
+    }
+    .contact-line-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: #06c755;
+      color: #fff;
+      border-radius: 10px;
+      padding: 0.9rem 1.25rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-top: 0.75rem;
+      transition: opacity 0.2s;
+    }
+    .contact-line-link:hover { opacity: 0.88; }
+    .contact-note {
+      font-size: 0.75rem;
+      color: var(--text-ll);
+      margin-top: 0.5rem;
+      line-height: 1.6;
+    }
+
+    /* ═══════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════ */
+    footer {
+      background: var(--dark);
+      padding: 3.5rem 0 2rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 4rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      margin-bottom: 1.5rem;
+    }
+    .footer-logo-main {
+      font-family: var(--font-en);
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      color: #fff;
+      margin-bottom: 0.25rem;
+    }
+    .footer-logo-main span { color: var(--gold); }
+    .footer-links {
+      display: flex;
+      gap: 3rem;
+      justify-content: flex-end;
+    }
+    .footer-col h4 {
+      font-family: var(--font-en);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 1.2rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.9rem; }
+    .footer-col ul li a {
+      font-size: 0.85rem;
+      color: #aaa;
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .copyright { font-size: 0.7rem; color: #444; font-family: var(--font-en); }
+
+    /* ── STICKY CTA ── */
+    .sp-sticky {
+      display: flex;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 90;
+      padding: 0.75rem 1.5rem;
+      background: rgba(255,255,255,0.97);
+      border-top: 2px solid var(--gold-l);
+      backdrop-filter: blur(10px);
+      gap: 0.75rem;
+      justify-content: center;
+    }
+    .sp-sticky a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      background: var(--gold);
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 0.9rem;
+      border-radius: 10px;
+    }
+
+    /* ═══════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════ */
+    @media (max-width: 960px) {
+      #hero { min-height: 55vh; }
+      .hero-content { padding: 2rem 1.25rem; }
+
+      #about .about-grid,
+      #trainer .trainer-grid,
+      #access .access-grid,
+      .contact-grid { grid-template-columns: 1fr; }
+
+      #features .features-grid,
+      #cases .cases-grid,
+      #solution .solution-grid,
+      #pricing .pricing-grid { grid-template-columns: 1fr 1fr; }
+
+      .cognitive-block { grid-template-columns: 1fr; gap: 2rem; }
+      .cognitive-video-frame { max-height: 500px; }
+
+      .solution-card.wide { grid-column: span 2; grid-template-columns: 200px 1fr; }
+
+      #flow .flow-steps { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      #flow .flow-steps::before { display: none; }
+
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-links { flex-wrap: wrap; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
+
+      .header-nav { display: none; }
+      .header-cta .btn:first-child { display: none; }
+
+      .sp-sticky { display: flex; }
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 0 1.25rem; }
+      .section { padding: 2.5rem 0; }
+
+      #features .features-grid,
+      #cases .cases-grid,
+      #solution .solution-grid,
+      #pricing .pricing-grid { grid-template-columns: 1fr; }
+
+      .solution-card.wide { grid-column: span 1; grid-template-columns: 1fr; }
+      .solution-card.wide .sol-img { min-height: 160px; }
+
+      #flow .flow-steps { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════ HEADER ═══════════════════ -->
+<header id="header">
+  <div class="header-top">
+    <a href="#" class="logo">
+      <span class="logo-main">TRINITY <span>URAWA</span></span>
+      <span class="logo-sub">Soccer Performance Training</span>
+    </a>
+    <nav class="header-nav">
+      <a href="#about">私たちについて</a>
+      <a href="#solution">解決できる課題</a>
+      <a href="#cases">プログラム</a>
+      <a href="#reviews">お客様の声</a>
+      <a href="#pricing">料金</a>
+      <a href="#access">アクセス</a>
+    </nav>
+    <div class="header-cta">
+      <a href="#contact" class="btn btn-outline btn-sm">お問い合わせ</a>
+      <a href="https://anjpgmfu.autosns.app/line" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
+        初回体験お申し込み
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<section id="hero">
+  <video class="hero-slide" autoplay muted loop playsinline>
+    <source src="soccer_media/hero_bg2.MOV" type="video/mp4">
+  </video>
+  <video class="hero-slide" autoplay muted loop playsinline>
+    <source src="soccer_media/hero_bg3.MOV" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <span class="badge" style="margin-bottom:1.25rem;">完全予約制パーソナルジム</span>
+    <h1 class="hero-title">
+      サッカー選手のための<br>
+      <em>自分史上最高の</em><br>
+      パフォーマンスを。
+    </h1>
+    <p class="hero-sub">
+      解剖学・生理学・感覚統合・認知トレーニングに基づく<br>
+      完全個別のサッカー専門パーソナルトレーニング。
+    </p>
+    <p style="font-size:1rem;color:var(--gold);margin-top:0.75rem;font-weight:600;letter-spacing:0.05em;">身体を整え、心を満たし、習慣を変える。</p>
+    <div class="hero-pillars">
+      <span class="pillar">スピード強化</span>
+      <span class="pillar">キック力向上</span>
+      <span class="pillar">怪我予防</span>
+      <span class="pillar">認知トレーニング</span>
+      <span class="pillar">方向転換</span>
+    </div>
+    <div class="hero-btns">
+      <a href="https://anjpgmfu.autosns.app/line" class="btn btn-primary" target="_blank" rel="noopener">
+        初回体験に申し込む
+      </a>
+      <a href="#about" class="btn btn-outline">詳しく見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ CAMPAIGN ═══════════════════ -->
+<div id="campaign">
+  <p>
+    🎉 期間限定キャンペーン — 初回体験セッション（60分）<strong> 完全無料！</strong>
+    <a href="https://anjpgmfu.autosns.app/line" target="_blank" rel="noopener">LINEで今すぐ申し込む →</a>
+  </p>
+</div>
+
+<!-- ═══════════════════ ABOUT ═══════════════════ -->
+<section id="about" class="section section-gray">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img">
+        <img class="media-fill" src="soccer_media/about_photo.jpeg" alt="トレーニング風景" style="object-position:center center;">
+      </div>
+      <div class="about-content">
+        <span class="sec-label">About</span>
+        <h2 class="sec-title">TRINITY URAWA について</h2>
+        <span class="accent-line left"></span>
+        <p class="about-main-copy">
+          サッカー選手が"過去の自分を超える"<br>
+          パフォーマンスを手に入れる場所。
+        </p>
+        <p class="sec-lead" style="margin-top:0;">
+          選手一人ひとりの身体・競技レベル・目標に合わせた
+          <strong>完全個別プログラム</strong>を提供します。
+          小学生からプロサッカー選手まで、
+          あらゆるレベルのサッカー選手をサポートします。
+        </p>
+        <div class="about-pillars">
+          <span class="about-pillar-tag">解剖学的アプローチ</span>
+          <span class="about-pillar-tag">生理学的プログラム</span>
+          <span class="about-pillar-tag">感覚統合トレーニング</span>
+        </div>
+        <ul class="about-goals">
+          <li>スプリント・加速力を強化したい</li>
+          <li>キックのパワーと精度を上げたい</li>
+          <li>怪我なく長くプレーし続けたい</li>
+          <li>90分通して走り続けられる身体を作りたい</li>
+          <li>正しい身体の使い方を理解したい</li>
+          <li>判断能力・認知スピードを上げたい</li>
+          <li>対人で負けないようにしたい</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">無料カウンセリングを予約する</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ SOLUTION ═══════════════════ -->
+<section id="solution" class="section">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-label">Solution</span>
+      <h2 class="sec-title">私たちが解決できる課題</h2>
+      <span class="accent-line"></span>
+      <p class="sec-lead" style="max-width:600px;margin:1rem auto 0;">
+        姿勢・動作パターン・神経筋機能に着目した多角的アプローチで、<br>
+        サッカー選手一人ひとりの課題に本気で取り組みます。
+      </p>
+    </div>
+    <div class="solution-grid">
+      <div class="solution-card">
+        <div class="sol-img" style="aspect-ratio:3/4;">
+          <video autoplay muted loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+            <source src="soccer_media/sprint_video.mov" type="video/mp4">
+          </video>
+        </div>
+        <div class="sol-body">
+          <div class="sol-num">Solution 01</div>
+          <div class="sol-title">スプリント・加速力の強化</div>
+          <p class="sol-desc">神経系の反応速度と股関節・足部の爆発的収縮力を改善し、0〜10mの初速と最高速度を同時に向上させます。</p>
+        </div>
+      </div>
+      <div class="solution-card">
+        <div class="sol-img" style="aspect-ratio:3/4;">
+          <img src="soccer_media/img_9277.jpg" alt="キックパフォーマンストレーニング" style="object-position:center center;">
+        </div>
+        <div class="sol-body">
+          <div class="sol-num">Solution 02</div>
+          <div class="sol-title">キックパフォーマンスの最大化</div>
+          <p class="sol-desc">体幹回旋力・股関節屈曲力・足首の固定力の連動性を強化し、キックの威力・精度・疲労耐性を向上させます。</p>
+        </div>
+      </div>
+      <div class="solution-card">
+        <div class="sol-img" style="aspect-ratio:3/4;">
+          <img src="soccer_media/injury_prevention.jpeg" alt="怪我予防トレーニング">
+        </div>
+        <div class="sol-body">
+          <div class="sol-num">Solution 03</div>
+          <div class="sol-title">怪我予防・再発防止プログラム</div>
+          <p class="sol-desc">膝・股関節・足首の動作パターン歪みを特定し根本から修正。繰り返す怪我のサイクルを断ち切ります。</p>
+        </div>
+      </div>
+      <div class="solution-card">
+        <div class="sol-img" style="aspect-ratio:3/4;">
+          <video autoplay muted loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+            <source src="soccer_media/agility_video.MOV" type="video/mp4">
+          </video>
+        </div>
+        <div class="sol-body">
+          <div class="sol-num">Solution 04</div>
+          <div class="sol-title">方向転換・アジリティ × 認知トレーニング</div>
+          <p class="sol-desc">切り返しの速さは「筋力」だけでなく、視覚認知・固有感覚・反応速度に大きく依存します。認知系トレーニングと感覚統合を組み込むことで、判断からアクションまでの時間を短縮し、サイドステップや方向転換のキレが飛躍的に向上します。</p>
+        </div>
+      </div>
+      <div class="solution-card">
+        <div class="sol-img" style="aspect-ratio:3/4;">
+          <img src="soccer_media/daily_program.jpeg" alt="継続サポート" style="object-fit:cover;object-position:center center;width:100%;height:100%;">
+        </div>
+        <div class="sol-body">
+          <div class="sol-num">Solution 05</div>
+          <div class="sol-title">毎日の継続サポート</div>
+          <p class="sol-desc">毎日の継続をするために、必要なエクササイズの共有やトレーニングプログラムの作成を行い、自宅でも実践できる環境を整えます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FEATURES ═══════════════════ -->
+<section id="features" class="section section-gray">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-label">Why Choose Us</span>
+      <h2 class="sec-title">TRINITY URAWAが選ばれる 3 つの理由</h2>
+      <span class="accent-line"></span>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-card-media">
+          <img class="feature-card-bg" src="soccer_media/feature01.jpeg" alt="">
+        </div>
+        <div class="feature-card-overlay"></div>
+        <div class="feature-card-body">
+          <div class="feature-title">丁寧な動作アセスメント</div>
+          <div class="feature-title-line"></div>
+          <p class="feature-desc">生活習慣・競技歴・身体の状態を丁寧にヒアリングし、動作分析で問題を可視化。あなたに最適なプランをご提案します。</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-media">
+          <img class="feature-card-bg" src="soccer_media/feature_coaching.jpeg" alt="" style="object-position:center center;">
+        </div>
+        <div class="feature-card-overlay"></div>
+        <div class="feature-card-body">
+          <div class="feature-title">サッカー専門の指導設計</div>
+          <div class="feature-title-line"></div>
+          <p class="feature-desc">経験豊富なトレーナーが、競技特性・ポジション・シーズンサイクルに合わせた最適なアプローチをデザインします。</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-media">
+          <video class="feature-card-bg" autoplay muted loop playsinline>
+            <source src="soccer_media/feature_team.MOV" type="video/mp4">
+          </video>
+        </div>
+        <div class="feature-card-overlay"></div>
+        <div class="feature-card-body">
+          <div class="feature-title">チーム練習と両立できる設計</div>
+          <div class="feature-title-line"></div>
+          <p class="feature-desc">試合・練習スケジュールに合わせた週次プランで、オーバートレーニングなくチームパフォーマンスも向上させます。</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-media">
+          <video class="feature-card-bg" autoplay muted loop playsinline>
+            <source src="soccer_media/IMG_2995.MOV" type="video/mp4">
+          </video>
+        </div>
+        <div class="feature-card-overlay"></div>
+        <div class="feature-card-body">
+          <div class="feature-title">認知系トレーニング</div>
+          <div class="feature-title-line"></div>
+          <p class="feature-desc">視覚・固有感覚・反応速度を同時に鍛える認知系アプローチで、判断速度とプレーの質を根本から高めます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ COGNITIVE ═══════════════════ -->
+<section id="cognitive" class="section">
+  <div class="container">
+    <div class="cognitive-block">
+      <div class="cognitive-video-main">
+        <div class="cognitive-video-frame">
+          <video autoplay muted loop playsinline>
+            <source src="soccer_media/kick_video.MOV" type="video/mp4">
+          </video>
+        </div>
+        <div class="cognitive-video-caption">
+          <span>認知×運動の連動で、試合で使える判断力を獲得</span>
+        </div>
+      </div>
+      <div class="cognitive-content">
+        <span class="sec-label">Cognitive Training</span>
+        <h2 class="sec-title">認知系トレーニングで<br><em style="font-style:normal;color:var(--gold);">判断力・反応速度</em>を鍛える</h2>
+        <span class="accent-line left"></span>
+        <p class="sec-lead" style="margin-top:1rem;">
+          サッカーのパフォーマンスは「筋力」だけでは決まりません。<br>
+          相手の動きを読み、瞬時に判断し、身体を動かす──<br>
+          この<strong>認知×運動の連動</strong>こそが競技力の核心です。
+        </p>
+        <ul class="cognitive-points">
+          <li>
+            <div>
+              <strong>視覚認知トレーニング</strong>
+              リアクションボールや視覚刺激を使い、動体視力と空間認識を強化。周囲の状況判断スピードが上がります。
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>反応速度の向上</strong>
+              ランダムな刺激への素早い反応を繰り返すことで、神経系の伝達速度が高まり、初動の速さが変わります。
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>デュアルタスクトレーニング</strong>
+              身体動作と認知課題を同時に行うことで、試合中に考えながら動く能力を効率よく習得できます。
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>固有感覚の統合</strong>
+              不安定環境下での運動制御を高め、ドリブル・ターン・シュートの精度と安定性を向上させます。
+            </div>
+          </li>
+        </ul>
+        <a href="https://anjpgmfu.autosns.app/line" class="btn btn-primary" target="_blank" rel="noopener">認知系トレーニングを体験する</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ CASES ═══════════════════ -->
+<section id="cases" class="section">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-label">Program</span>
+      <h2 class="sec-title">トレーニングプログラム</h2>
+      <span class="accent-line"></span>
+      <p class="sec-lead" style="max-width:580px;margin:1rem auto 0;">
+        さまざまな目標とシーズンサイクルに合わせた3フェーズプログラムを提供しています
+      </p>
+    </div>
+    <div class="cases-grid">
+      <div class="case-card">
+        <div class="case-img">
+          <img src="soccer_media/img_reset_phase1.jpg" alt="動作リセット期" style="object-position:center center;">
+        </div>
+        <div class="case-body">
+          <div class="case-phase">Phase 01 · 1〜4週</div>
+          <div class="case-title">動作リセット期</div>
+          <p class="case-desc">機能障害の特定と神経筋パターンの再教育。まず身体の「使い方」を根本から整えます。</p>
+          <ul class="case-items">
+            <li>姿勢・動作アセスメント</li>
+            <li>過緊張筋のリリース</li>
+            <li>弱化筋の活性化</li>
+            <li>体幹ニュートラル習得</li>
+            <li>固有感覚再教育</li>
+          </ul>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-img">
+          <video autoplay muted loop playsinline>
+            <source src="soccer_media/phase02_video.MOV" type="video/mp4">
+          </video>
+        </div>
+        <div class="case-body">
+          <div class="case-phase">Phase 02 · 5〜12週</div>
+          <div class="case-title">筋力・出力強化期</div>
+          <p class="case-desc">サッカーに直結する動作で使える筋力を構築。競技パフォーマンスに直結する出力を高めます。</p>
+          <ul class="case-items">
+            <li>片脚スクワット・RDL系</li>
+            <li>股関節爆発的収縮</li>
+            <li>体幹回旋力強化</li>
+            <li>ハムストリングス強化</li>
+            <li>プライオメトリクス導入</li>
+          </ul>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-img">
+          <video autoplay muted loop playsinline style="object-position:center center;">
+            <source src="soccer_media/IMG_1498.MOV" type="video/mp4">
+          </video>
+        </div>
+        <div class="case-body">
+          <div class="case-phase">Phase 03 · 13週〜</div>
+          <div class="case-title">スポーツ動作統合期</div>
+          <p class="case-desc">構築した筋力・感覚をサッカー動作に完全統合。競技パフォーマンスを最大化します。</p>
+          <ul class="case-items">
+            <li>スプリントメカニクス最適化</li>
+            <li>方向転換ドリル</li>
+            <li>キックバイオメカニクス</li>
+            <li>試合前後コンディショニング</li>
+            <li>シーズン管理プロトコル</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ REVIEWS ═══════════════════ -->
+<section id="reviews" class="section section-gray">
+  <div class="container">
+    <div class="reviews-header">
+      <span class="sec-label">Reviews</span>
+      <h2 class="sec-title">お客様の声</h2>
+      <span class="accent-line"></span>
+      <p class="sec-lead" style="margin-top:0.75rem;">選手の皆さまからいただいたご感想をご紹介します</p>
+      <div class="reviews-rating">
+        <span class="stars">★★★★★</span>
+        <span class="rating-val">5.0</span>
+      </div>
+    </div>
+    <div class="reviews-scroll">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">膝の古傷を抱えながらプレーしていましたが、動作の歪みを直してもらってから全く痛みが出なくなりました。怪我をしにくい体の使い方が身についてきたと感じます。</p>
+        <div class="review-profile">
+          <div class="review-avatar">⚽</div>
+          <div>
+            <div class="review-name">K.M さん（34歳）</div>
+            <div class="review-pos">社会人リーグ / DF / 5ヶ月継続</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">大学でサッカーを続けながら、もっとレベルアップしたくて通い始めました。チームの練習との両立も無理なくできて、スタメン争いに勝てるようになってきています。体の使い方を論理的に教えてもらえるので、自分でも考えてプレーできるようになりました。</p>
+        <div class="review-profile">
+          <div class="review-avatar">⚽</div>
+          <div>
+            <div class="review-name">R.N さん（21歳）</div>
+            <div class="review-pos">大学サッカー部 / MF / 4ヶ月継続</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">切り返しのキレが明らかに変わりました。感覚統合トレーニングという概念を初めて知りましたが、これがここまで効くとは思いませんでした。対人でも負けなくなりました。</p>
+        <div class="review-profile">
+          <div class="review-avatar">⚽</div>
+          <div>
+            <div class="review-name">Y.H さん（28歳）</div>
+            <div class="review-pos">社会人リーグ / SH / 6ヶ月継続</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">中学でサッカー部に入ってから伸び悩んでいたので、親に勧められて来ました。最初は難しそうと思っていたけど、丁寧に教えてもらえてすごく楽しいです。走るのが速くなったと友達にも言われるようになって、試合に出る機会も増えました。</p>
+        <div class="review-profile">
+          <div class="review-avatar">⚽</div>
+          <div>
+            <div class="review-name">S.O さん（19歳）</div>
+            <div class="review-pos">大学サッカー部 / CB / 2ヶ月継続</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">いつもお世話になります！小学5年生になる息子のスポーツパフォーマンス向上に向けて、月に数度通っています。3ヶ月で明らかに姿勢や動きに変化が見られます。一生もの身体を手に入れるために引き続きよろしくお願いします！</p>
+        <div class="review-profile">
+          <div class="review-avatar">⚽</div>
+          <div>
+            <div class="review-name">O.Y さん</div>
+            <div class="review-pos">保護者 / 7ヶ月継続</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">ピラティスを取り入れてもらいながら、実際のプレーの動きに近いトレーニングをしてもらっています。パーソナルトレーニングで、より細かく指導してもらえるのでイメージもしやすく、意識するべきところも明確になります。回数を重ねていくことで実際の試合や練習で、自分のプレーにリンクするようになってきているという手応えを感じています。</p>
+        <div class="review-profile">
+          <div class="review-avatar">⚽</div>
+          <div>
+            <div class="review-name">N.A さん</div>
+            <div class="review-pos">Jリーガー / 6ヶ月継続</div>
+          </div>
+        </div>
+      </div>
+      <!-- marquee用 複製 -->
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">スプリントタイムが40mで0.3秒縮まりました。筋肉の使い方が根本的に変わったと実感しています。</p>
+        <div class="review-profile">
+          <div class="review-avatar">⚽</div>
+          <div>
+            <div class="review-name">T.S さん（26歳）</div>
+            <div class="review-pos">社会人リーグ / FW / 3ヶ月継続</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ GALLERY ═══════════════════ -->
+<section id="gallery" class="section-gray" style="padding:3rem 0;">
+  <div class="container" style="margin-bottom:1.5rem;">
+    <span class="sec-label" style="display:block;text-align:center;">Gallery</span>
+    <h2 class="sec-title" style="text-align:center;">トレーニング風景</h2>
+  </div>
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <div class="marquee-item"><video autoplay muted loop playsinline><source src="soccer_media/sprint_video.mov" type="video/mp4"></video></div>
+      <div class="marquee-item"><img src="soccer_media/feature01.jpeg" alt="アセスメント"></div>
+      <div class="marquee-item"><video autoplay muted loop playsinline><source src="soccer_media/agility_video.MOV" type="video/mp4"></video></div>
+      <div class="marquee-item"><img src="soccer_media/img_9277.jpg" alt="キック"></div>
+      <div class="marquee-item"><video autoplay muted loop playsinline><source src="soccer_media/IMG_2995.MOV" type="video/mp4"></video></div>
+      <div class="marquee-item"><img src="soccer_media/injury_prevention.jpeg" alt="怪我予防"></div>
+      <div class="marquee-item"><video autoplay muted loop playsinline><source src="soccer_media/kick_video.MOV" type="video/mp4"></video></div>
+      <div class="marquee-item"><img src="soccer_media/feature_coaching.jpeg" alt="指導"></div>
+      <div class="marquee-item"><video autoplay muted loop playsinline><source src="soccer_media/feature_team.MOV" type="video/mp4"></video></div>
+      <div class="marquee-item"><video autoplay muted loop playsinline><source src="soccer_media/phase02_video.MOV" type="video/mp4"></video></div>
+      <div class="marquee-item"><img src="soccer_media/daily_program.jpeg" alt="プログラム"></div>
+      <div class="marquee-item"><video autoplay muted loop playsinline><source src="soccer_media/feature_assessment.MOV" type="video/mp4"></video></div>
+      <div class="marquee-item"><img src="soccer_media/img_reset_phase1.jpg" alt="リセット期"></div>
+      <div class="marquee-item"><video autoplay muted loop playsinline><source src="soccer_media/IMG_0078.mov" type="video/mp4"></video></div>
+      <div class="marquee-item"><img src="soccer_media/gallery_0304.jpeg" alt="トレーニング"></div>
+      <!-- duplicate for seamless loop -->
+      <div class="marquee-item"><video autoplay muted loop playsinline><source src="soccer_media/sprint_video.mov" type="video/mp4"></video></div>
+      <div class="marquee-item"><img src="soccer_media/feature01.jpeg" alt="アセスメント"></div>
+      <div class="marquee-item"><video autoplay muted loop playsinline><source src="soccer_media/agility_video.MOV" type="video/mp4"></video></div>
+      <div class="marquee-item"><img src="soccer_media/img_9277.jpg" alt="キック"></div>
+      <div class="marquee-item"><video autoplay muted loop playsinline><source src="soccer_media/IMG_2995.MOV" type="video/mp4"></video></div>
+      <div class="marquee-item"><img src="soccer_media/injury_prevention.jpeg" alt="怪我予防"></div>
+      <div class="marquee-item"><video autoplay muted loop playsinline><source src="soccer_media/kick_video.MOV" type="video/mp4"></video></div>
+      <div class="marquee-item"><img src="soccer_media/feature_coaching.jpeg" alt="指導"></div>
+      <div class="marquee-item"><video autoplay muted loop playsinline><source src="soccer_media/feature_team.MOV" type="video/mp4"></video></div>
+      <div class="marquee-item"><video autoplay muted loop playsinline><source src="soccer_media/phase02_video.MOV" type="video/mp4"></video></div>
+      <div class="marquee-item"><img src="soccer_media/daily_program.jpeg" alt="プログラム"></div>
+      <div class="marquee-item"><video autoplay muted loop playsinline><source src="soccer_media/feature_assessment.MOV" type="video/mp4"></video></div>
+      <div class="marquee-item"><img src="soccer_media/img_reset_phase1.jpg" alt="リセット期"></div>
+      <div class="marquee-item"><video autoplay muted loop playsinline><source src="soccer_media/IMG_0078.mov" type="video/mp4"></video></div>
+      <div class="marquee-item"><img src="soccer_media/gallery_0304.jpeg" alt="トレーニング"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ PRICING ═══════════════════ -->
+<section id="pricing" class="section">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-label">Pricing</span>
+      <h2 class="sec-title">料金プラン</h2>
+      <span class="accent-line"></span>
+      <p class="sec-lead" style="margin-top:0.75rem;">初回体験セッション（60分）は完全無料。まずはお気軽にご相談ください。</p>
+    </div>
+
+    <p class="pricing-scroll-hint">スクロールで全体を表示 →</p>
+    <div class="pricing-table-wrap">
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>プラン</th>
+            <th>料金（税込）</th>
+            <th>備考</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- パーソナル -->
+          <tr class="pt-category"><td colspan="3">パーソナル</td></tr>
+          <tr>
+            <td>都度払い</td>
+            <td class="pt-price">¥13,500／回</td>
+            <td class="pt-note"></td>
+          </tr>
+          <tr>
+            <td rowspan="2">回数券</td>
+            <td class="pt-price">¥156,000</td>
+            <td class="pt-note">1回あたり ¥13,000（12回券）</td>
+          </tr>
+          <tr>
+            <td class="pt-price">¥300,000</td>
+            <td class="pt-note">1回あたり ¥12,500（24回券）</td>
+          </tr>
+          <tr>
+            <td>月2回（ライト）</td>
+            <td class="pt-price">¥22,000</td>
+            <td class="pt-note">1回 ¥11,000</td>
+          </tr>
+          <tr class="pt-highlight">
+            <td>月4回（スタンダード）</td>
+            <td class="pt-price">¥39,600</td>
+            <td class="pt-note">1回 ¥9,900</td>
+          </tr>
+          <tr>
+            <td>月8回（プレミアム）</td>
+            <td class="pt-price">¥88,000</td>
+            <td class="pt-note">1回 ¥11,000＋毎週の食事指導付き</td>
+          </tr>
+          <!-- 家族・ペアプラン -->
+          <tr class="pt-category"><td colspan="3">家族・ペアプラン</td></tr>
+          <tr>
+            <td>月額　月4回</td>
+            <td class="pt-price">¥28,000</td>
+            <td class="pt-note">1人あたり</td>
+          </tr>
+          <tr>
+            <td rowspan="2">回数券</td>
+            <td class="pt-price">¥90,000</td>
+            <td class="pt-note">1回あたり ¥7,500（12回券）</td>
+          </tr>
+          <tr>
+            <td class="pt-price">¥168,000</td>
+            <td class="pt-note">1回あたり ¥7,000（24回券）</td>
+          </tr>
+          <!-- オプション -->
+          <tr class="pt-category"><td colspan="3">オプション</td></tr>
+          <tr>
+            <td>食事指導</td>
+            <td class="pt-price">¥11,000</td>
+            <td class="pt-note"></td>
+          </tr>
+          <tr>
+            <td>習慣化サポート / メニュー作成</td>
+            <td class="pt-price">¥8,800 / 月</td>
+            <td class="pt-note"></td>
+          </tr>
+          <tr>
+            <td>パーソナルコンサルタント</td>
+            <td class="pt-price">¥16,500 / 月</td>
+            <td class="pt-note"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="pricing-note">※ 表示価格はすべて税込です。初回体験セッション（60分）は無料。強引な勧誘は一切ありません。</p>
+    <div style="text-align:center;margin-top:2rem;">
+      <a href="https://anjpgmfu.autosns.app/line" class="btn btn-primary" target="_blank" rel="noopener">LINEで無料体験に申し込む</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ TRAINER ═══════════════════ -->
+
+<!-- ═══════════════════ FLOW ═══════════════════ -->
+<section id="flow" class="section">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-label">Flow</span>
+      <h2 class="sec-title">体験の流れ</h2>
+      <span class="accent-line"></span>
+    </div>
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="flow-circle">
+          <span class="flow-circle-num">STEP</span>
+        </div>
+        <div class="flow-title">LINEで申し込み</div>
+        <p class="flow-desc">「無料体験」と送るだけ。24時間以内に返信します。</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-circle">
+          <span class="flow-circle-num">STEP</span>
+        </div>
+        <div class="flow-title">カウンセリング</div>
+        <p class="flow-desc">競技歴・目標・身体の状態を丁寧にヒアリングします。</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-circle">
+          <span class="flow-circle-num">STEP</span>
+        </div>
+        <div class="flow-title">動作アセスメント</div>
+        <p class="flow-desc">動作分析で課題を可視化し、最適なプランをご提案。</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-circle">
+          <span class="flow-circle-num">STEP</span>
+        </div>
+        <div class="flow-title">プログラム開始</div>
+        <p class="flow-desc">個別プログラムでトレーニングスタート。継続的にサポートします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FAQ ═══════════════════ -->
+<section id="faq" class="section section-gray">
+  <div class="container" style="max-width:760px;">
+    <div class="sec-header">
+      <span class="sec-label">FAQ</span>
+      <h2 class="sec-title">よくある質問</h2>
+      <span class="accent-line"></span>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item open">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>TRINITY URAWAはどんなジムですか？</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">サッカー選手専門の完全個室パーソナルトレーニングジムです。解剖学・生理学・感覚統合に基づいたアプローチで、競技パフォーマンスの向上と怪我予防を科学的にサポートします。</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>初回体験の料金はいくらですか？</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">初回体験セッション（60分）は完全無料です。カウンセリング・動作アセスメント・プログラム提案まで含まれています。強引な勧誘は一切行いません。</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>チームの練習と並行してできますか？</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">はい、チームの練習・試合スケジュールに合わせてプログラムを設計します。オーバートレーニングを防ぎながら、チームパフォーマンスも向上できるよう計画します。</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>成果が出るまでどのくらいかかりますか？</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">個人差はありますが、多くの方が4〜8週間で動作の変化を実感されています。スプリントタイムや筋力の数値的な向上は8〜12週で顕著になることが多いです。92%の方が3ヶ月以内に成果を実感しています。</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>営業時間と定休日を教えてください。</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">平日 9:00〜21:00、土曜 9:00〜14:00（完全予約制）。定休日は日曜日です。詳しくはLINEにてご確認ください。</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>現在怪我中でも受けられますか？</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">怪我の種類と状態によります。医師の許可がある範囲での怪我後リハビリ・復帰プログラムも対応しています。まずは無料カウンセリングでご相談ください。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ ACCESS ═══════════════════ -->
+<section id="access" class="section">
+  <div class="container">
+    <div class="sec-header" style="text-align:left;">
+      <span class="sec-label">Access</span>
+      <h2 class="sec-title">アクセス・店舗情報</h2>
+      <span class="accent-line left"></span>
+    </div>
+    <div class="access-grid">
+      <div class="access-map">
+        <iframe
+          src="https://maps.google.com/maps?cid=3553684286734607128&output=embed&hl=ja"
+          width="100%" height="100%" style="border:0;border-radius:var(--radius);"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <div>
+        <p style="font-size:0.78rem;color:var(--text-ll);font-family:var(--font-en);font-weight:700;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:1.25rem;">Studio Information</p>
+        <table class="access-table">
+          <tr>
+            <th>スタジオ</th>
+            <td>TRINITY URAWA</td>
+          </tr>
+          <tr>
+            <th>住所</th>
+            <td>東京都（詳細はLINEにてお伝えします）</td>
+          </tr>
+          <tr>
+            <th>電話</th>
+            <td>LINEにてお問い合わせください</td>
+          </tr>
+          <tr>
+            <th>営業時間</th>
+            <td>平日 9:00〜21:00 / 土曜 9:00〜14:00（完全予約制）</td>
+          </tr>
+          <tr>
+            <th>定休日</th>
+            <td>日曜日</td>
+          </tr>
+          <tr>
+            <th>設備</th>
+            <td>完全個室・バーベル・ダンベル・パワーラック・ピラティスマシン</td>
+          </tr>
+        </table>
+        <div style="margin-top:1.75rem;">
+          <a href="https://anjpgmfu.autosns.app/line" class="btn btn-line" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.01 2 10.97c0 4.28 2.99 7.86 7.14 8.75.52.11.69-.23.69-.5v-1.7c-2.89.63-3.5-1.39-3.5-1.39-.47-1.2-1.16-1.52-1.16-1.52-.95-.65.07-.63.07-.63 1.05.07 1.6 1.08 1.6 1.08.93 1.6 2.44 1.14 3.04.87.09-.67.36-1.14.66-1.4-2.31-.26-4.73-1.16-4.73-5.15 0-1.14.41-2.07 1.08-2.8-.11-.26-.47-1.32.1-2.76 0 0 .88-.28 2.88 1.07a10 10 0 0 1 5.24 0c2-.35 2.88-1.07 2.88-1.07.57 1.44.21 2.5.1 2.76.67.73 1.08 1.66 1.08 2.8 0 4-2.43 4.89-4.74 5.14.37.32.7.95.7 1.91v2.83c0 .27.17.61.7.5C19.01 18.83 22 15.25 22 10.97 22 6.01 17.52 2 12 2z"/></svg>
+            LINEで詳細を確認する
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ CONTACT ═══════════════════ -->
+<section id="contact" class="section section-gray">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-label">Contact</span>
+      <h2 class="sec-title">お問い合わせ・初回体験</h2>
+      <span class="accent-line"></span>
+      <p class="sec-lead" style="max-width:540px;margin:1rem auto 0;">
+        この機会に"新しい自分"を体感してください。<br>お気軽にお問い合わせください。
+      </p>
+    </div>
+    <div class="contact-grid" style="grid-template-columns:1fr;max-width:480px;margin:0 auto;">
+      <div class="contact-cards">
+        <div class="contact-card">
+          <div class="contact-card-title">LINE で簡単予約</div>
+          <p style="font-size:0.85rem;color:var(--text-l);line-height:1.85;">QRコードを読み取るか、ボタンからご登録ください。ご登録後、以下の2点をメッセージでお送りください。</p>
+          <div style="background:#f5f5f5;border-radius:8px;padding:0.75rem 1rem;margin:0.75rem 0;font-size:0.85rem;line-height:2;">
+            <div>① <strong>「初回体験」</strong></div>
+            <div>② <strong>フルネーム（漢字・カタカナ）</strong><br><span style="font-size:0.78rem;color:var(--text-l);">例）田中 太郎 / タナカ タロウ</span></div>
+          </div>
+          <p style="font-size:0.8rem;color:var(--text-l);">24時間以内に返信いたします。</p>
+          <div style="text-align:center;margin:1rem 0;">
+            <img src="soccer_media/line_qr.PNG" alt="LINE QRコード" style="width:160px;height:160px;object-fit:contain;border-radius:12px;border:3px solid #06c755;padding:6px;background:#fff;">
+            <p style="font-size:0.75rem;color:var(--text-ll);margin-top:0.4rem;">📱 カメラで読み取り</p>
+            <a href="soccer_media/line_qr.PNG" download="LINE_QR.PNG" style="display:inline-block;margin-top:0.5rem;font-size:0.75rem;color:#06c755;font-weight:700;text-decoration:underline;">⬇ QRコードを保存する</a>
+          </div>
+          <a href="https://anjpgmfu.autosns.app/line" class="contact-line-link" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.01 2 10.97c0 4.28 2.99 7.86 7.14 8.75.52.11.69-.23.69-.5v-1.7c-2.89.63-3.5-1.39-3.5-1.39-.47-1.2-1.16-1.52-1.16-1.52-.95-.65.07-.63.07-.63 1.05.07 1.6 1.08 1.6 1.08.93 1.6 2.44 1.14 3.04.87.09-.67.36-1.14.66-1.4-2.31-.26-4.73-1.16-4.73-5.15 0-1.14.41-2.07 1.08-2.8-.11-.26-.47-1.32.1-2.76 0 0 .88-.28 2.88 1.07a10 10 0 0 1 5.24 0c2-.35 2.88-1.07 2.88-1.07.57 1.44.21 2.5.1 2.76.67.73 1.08 1.66 1.08 2.8 0 4-2.43 4.89-4.74 5.14.37.32.7.95.7 1.91v2.83c0 .27.17.61.7.5C19.01 18.83 22 15.25 22 10.97 22 6.01 17.52 2 12 2z"/></svg>
+            LINEで無料体験を申し込む
+          </a>
+          <p class="contact-note">✓ 強引な勧誘なし　✓ 相談だけでもOK</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-title">営業時間</div>
+          <table style="width:100%;border-collapse:collapse;">
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:0.5rem 0;font-size:0.82rem;color:var(--text-l);width:80px;">平日</td>
+              <td style="padding:0.5rem 0;font-size:0.85rem;font-weight:600;">9:00〜21:00</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:0.5rem 0;font-size:0.82rem;color:var(--text-l);width:80px;">土曜</td>
+              <td style="padding:0.5rem 0;font-size:0.85rem;font-weight:600;">9:00〜14:00</td>
+            </tr>
+            <tr>
+              <td style="padding:0.5rem 0;font-size:0.82rem;color:var(--text-l);">日祝</td>
+              <td style="padding:0.5rem 0;font-size:0.85rem;font-weight:600;">休業</td>
+            </tr>
+          </table>
+          <p class="contact-note" style="margin-top:0.75rem;">完全予約制 / 定休日：日曜日</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-title">キャンペーン情報</div>
+          <p style="font-size:0.85rem;color:var(--text-l);line-height:1.85;">
+            🎉 現在、<strong style="color:var(--gold);">初回体験セッション 完全無料</strong>キャンペーン実施中。この機会にぜひお試しください。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo-main">TRINITY <span>URAWA</span></div>
+        <div style="margin-top:1.5rem;font-size:0.85rem;color:#aaa;line-height:2;">
+          〒330-0053<br>
+          埼玉県さいたま市浦和区前地3丁目8-17<br>
+          TEL: 050-7108-4540<br>
+          info@vita-health.jp
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>MENU</h4>
+          <ul>
+            <li><a href="#about">コンセプト</a></li>
+            <li><a href="#features">選ばれる理由</a></li>
+            <li><a href="#cases">ご指導例</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>SERVICE</h4>
+          <ul>
+            <li><a href="#pricing">料金プラン</a></li>
+            <li><a href="#features">トレーニング風景</a></li>
+            <li><a href="#access">アクセス</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>SUPPORT</h4>
+          <ul>
+            <li><a href="#">コラム</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
+            <li><a href="https://anjpgmfu.autosns.app/line" target="_blank" rel="noopener">公式LINE</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="copyright">© 2026 TRINITY URAWA. All Rights Reserved.</div>
+    </div>
+  </div>
+</footer>
+<div style="height:70px;"></div>
+
+<!-- SP スティッキーCTA -->
+<div class="sp-sticky">
+  <a href="https://anjpgmfu.autosns.app/line" target="_blank" rel="noopener">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.01 2 10.97c0 4.28 2.99 7.86 7.14 8.75.52.11.69-.23.69-.5v-1.7c-2.89.63-3.5-1.39-3.5-1.39-.47-1.2-1.16-1.52-1.16-1.52-.95-.65.07-.63.07-.63 1.05.07 1.6 1.08 1.6 1.08.93 1.6 2.44 1.14 3.04.87.09-.67.36-1.14.66-1.4-2.31-.26-4.73-1.16-4.73-5.15 0-1.14.41-2.07 1.08-2.8-.11-.26-.47-1.32.1-2.76 0 0 .88-.28 2.88 1.07a10 10 0 0 1 5.24 0c2-.35 2.88-1.07 2.88-1.07.57 1.44.21 2.5.1 2.76.67.73 1.08 1.66 1.08 2.8 0 4-2.43 4.89-4.74 5.14.37.32.7.95.7 1.91v2.83c0 .27.17.61.7.5C19.01 18.83 22 15.25 22 10.97 22 6.01 17.52 2 12 2z"/></svg>
+    LINEで無料体験を申し込む
+  </a>
+</div>
+
+<script>
+  // Header scroll shadow
+  window.addEventListener('scroll', () => {
+    document.getElementById('header').classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // FAQ toggle
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      if (id === '#') return;
+      const t = document.querySelector(id);
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+</script>
+</body>
+</html>
