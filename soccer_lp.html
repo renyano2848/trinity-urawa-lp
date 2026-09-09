@@ -234,16 +234,16 @@
       object-position: center center;
       z-index: 0;
       opacity: 0;
-      animation: heroFade 10s linear infinite;
+      animation: heroFade 10s ease-in-out infinite;
     }
     .hero-slide:nth-child(1) { animation-delay: 0s; }
     .hero-slide:nth-child(2) { animation-delay: 5s; }
 
     @keyframes heroFade {
       0%   { opacity: 0; }
-      5%   { opacity: 1; }
-      45%  { opacity: 1; }
-      55%  { opacity: 0; }
+      8%   { opacity: 1; }
+      50%  { opacity: 1; }
+      58%  { opacity: 0; }
       100% { opacity: 0; }
     }
     .hero-overlay {
@@ -1541,10 +1541,10 @@
 
 <!-- ═══════════════════ HERO ═══════════════════ -->
 <section id="hero">
-  <video class="hero-slide" autoplay muted loop playsinline>
+  <video class="hero-slide" autoplay muted loop playsinline preload="auto">
     <source src="soccer_media/hero_bg2.MOV" type="video/mp4">
   </video>
-  <video class="hero-slide" autoplay muted loop playsinline>
+  <video class="hero-slide" autoplay muted loop playsinline preload="auto">
     <source src="soccer_media/hero_bg3.MOV" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
