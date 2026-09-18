@@ -236,8 +236,8 @@
       opacity: 0;
       animation: heroFade 10s ease-in-out infinite;
     }
-    .hero-slide:nth-child(1) { animation-delay: 0s; }
-    .hero-slide:nth-child(2) { animation-delay: 5s; }
+    .hero-slide:nth-child(1) { animation-delay: -1s; }
+    .hero-slide:nth-child(2) { animation-delay: 4s; }
 
     @keyframes heroFade {
       0%   { opacity: 0; }
@@ -790,25 +790,27 @@
       text-align: center;
       margin-bottom: 1rem;
     }
-    .reviews-rating {
-      display: flex;
+    /* Google評価バッジ */
+    .google-rating-badge {
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      margin-top: 0.75rem;
+      gap: 0.6rem;
+      background: #fff;
+      border-radius: 50px;
+      padding: 0.6rem 1.25rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-top: 1.25rem;
     }
+    .google-rating-badge .stars { color: #F4B942; font-size: 1rem; }
+    .google-rating-badge .rating-val { font-weight: 800; font-size: 1.1rem; color: var(--text); }
+    .google-rating-badge .rating-count { font-size: 0.82rem; color: var(--text-l); }
     .stars { color: #F4B942; font-size: 1.1rem; }
-    .rating-val {
-      font-family: var(--font-en);
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: var(--text);
-    }
+    .rating-val { font-family: var(--font-en); font-size: 1.4rem; font-weight: 800; color: var(--text); }
     .rating-count { font-size: 0.78rem; color: var(--text-ll); }
 
     .reviews-scroll {
       display: flex;
-      gap: 1.5rem;
+      gap: 1.25rem;
       overflow-x: auto;
       padding-bottom: 1rem;
       scrollbar-width: none;
@@ -818,39 +820,62 @@
 
     .review-card {
       flex-shrink: 0;
-      width: 320px;
+      width: 300px;
       background: #fff;
-      border-radius: var(--radius);
-      padding: 1.75rem;
-      box-shadow: var(--shadow);
-    }
-    .review-stars { color: #F4B942; font-size: 0.9rem; margin-bottom: 0.75rem; }
-    .review-text {
-      font-size: 0.85rem;
-      color: var(--text-l);
-      line-height: 1.9;
-      margin-bottom: 1.25rem;
-    }
-    .review-profile {
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
       display: flex;
-      align-items: center;
+      flex-direction: column;
       gap: 0.75rem;
-      border-top: 1px solid var(--border);
-      padding-top: 1rem;
     }
-    .review-avatar {
-      width: 40px; height: 40px;
-      border-radius: 50%;
-      background: var(--gold-bg);
-      border: 2px solid var(--gold-l);
+    .review-card-top {
       display: flex;
       align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      flex-shrink: 0;
+      justify-content: space-between;
     }
-    .review-name { font-size: 0.82rem; font-weight: 700; }
-    .review-pos { font-size: 0.72rem; color: var(--gold); margin-top: 1px; }
+    .review-stars { color: #F4B942; font-size: 1rem; }
+    .review-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--gold);
+      border: 1.5px solid var(--gold);
+      border-radius: 50px;
+      padding: 0.2rem 0.6rem;
+    }
+    .review-text {
+      font-size: 0.84rem;
+      color: var(--text-l);
+      line-height: 1.85;
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .review-text.expanded {
+      display: block;
+      -webkit-line-clamp: unset;
+    }
+    .review-more {
+      font-size: 0.8rem;
+      color: var(--gold);
+      font-weight: 700;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      text-align: left;
+    }
+    .review-google-label {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      color: #888;
+      border-top: 1px solid var(--border);
+      padding-top: 0.75rem;
+      margin-top: auto;
+    }
     .review-profile { display: none; }
 
     /* ═══════════════════════════════════════
@@ -1580,7 +1605,7 @@
 <!-- ═══════════════════ CAMPAIGN ═══════════════════ -->
 <div id="campaign">
   <p>
-    🎉 期間限定キャンペーン — 初回体験セッション（60分）<strong> 完全無料！</strong>
+    期間限定キャンペーン — 初回体験セッション（60分）<strong> 完全無料！</strong>
     <a href="https://anjpgmfu.autosns.app/line" target="_blank" rel="noopener">LINEで今すぐ申し込む →</a>
   </p>
 </div>
@@ -1702,7 +1727,7 @@
   <div class="container">
     <div class="sec-header">
       <span class="sec-label">Why Choose Us</span>
-      <h2 class="sec-title">TRINITY URAWAが選ばれる 3 つの理由</h2>
+      <h2 class="sec-title">TRINITY URAWAが選ばれる 4 つの理由</h2>
       <span class="accent-line"></span>
     </div>
     <div class="features-grid">
@@ -1891,90 +1916,70 @@
       <span class="sec-label">Reviews</span>
       <h2 class="sec-title">お客様の声</h2>
       <span class="accent-line"></span>
-      <p class="sec-lead" style="margin-top:0.75rem;">選手の皆さまからいただいたご感想をご紹介します</p>
-      <div class="reviews-rating">
-        <span class="stars">★★★★★</span>
-        <span class="rating-val">5.0</span>
+      <p class="sec-lead" style="margin-top:0.75rem;">Google口コミでいただいたお客様からのご感想をご紹介します</p>
+      <div style="display:flex;justify-content:center;">
+        <div class="google-rating-badge">
+          <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 5.1 29.6 3 24 3 12.4 3 3 12.4 3 24s9.4 21 21 21c10.5 0 20-7.6 20-21 0-1.4-.2-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l7 5.1C15 16.1 19.1 13 24 13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 5.1 29.6 3 24 3c-7.6 0-14.2 4.2-17.7 11.7z"/><path fill="#FBBC05" d="M24 45c5.8 0 11-2 14.9-5.2l-6.9-5.6C29.8 36 27 37 24 37c-6 0-11.1-4-12.9-9.5l-7 5.4C7.8 40.8 15.3 45 24 45z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.8c-.8 2.7-2.5 5-4.8 6.7l6.9 5.6C42.2 37.5 45 31.2 45 24c0-1.4-.2-2.7-.5-4z"/></svg>
+          <span class="stars">★★★★★</span>
+          <span class="rating-val">5.0</span>
+          <span class="rating-count">（14件の口コミ）</span>
+        </div>
       </div>
     </div>
     <div class="reviews-scroll">
       <div class="review-card">
-        <div class="review-stars">★★★★★</div>
+        <div class="review-card-top">
+          <div class="review-stars">★★★★★</div>
+          <span class="review-tag">怪我予防</span>
+        </div>
         <p class="review-text">膝の古傷を抱えながらプレーしていましたが、動作の歪みを直してもらってから全く痛みが出なくなりました。怪我をしにくい体の使い方が身についてきたと感じます。</p>
-        <div class="review-profile">
-          <div class="review-avatar">⚽</div>
-          <div>
-            <div class="review-name">K.M さん（34歳）</div>
-            <div class="review-pos">社会人リーグ / DF / 5ヶ月継続</div>
-          </div>
-        </div>
+        <button class="review-more" onclick="this.previousElementSibling.classList.toggle('expanded');this.textContent=this.textContent==='もっと読む'?'閉じる':'もっと読む'">もっと読む</button>
+        <div class="review-google-label"><svg width="14" height="14" viewBox="0 0 48 48"><path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 5.1 29.6 3 24 3 12.4 3 3 12.4 3 24s9.4 21 21 21c10.5 0 20-7.6 20-21 0-1.4-.2-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l7 5.1C15 16.1 19.1 13 24 13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 5.1 29.6 3 24 3c-7.6 0-14.2 4.2-17.7 11.7z"/><path fill="#FBBC05" d="M24 45c5.8 0 11-2 14.9-5.2l-6.9-5.6C29.8 36 27 37 24 37c-6 0-11.1-4-12.9-9.5l-7 5.4C7.8 40.8 15.3 45 24 45z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.8c-.8 2.7-2.5 5-4.8 6.7l6.9 5.6C42.2 37.5 45 31.2 45 24c0-1.4-.2-2.7-.5-4z"/></svg>Google口コミより</div>
       </div>
       <div class="review-card">
-        <div class="review-stars">★★★★★</div>
+        <div class="review-card-top">
+          <div class="review-stars">★★★★★</div>
+          <span class="review-tag">大学サッカー</span>
+        </div>
         <p class="review-text">大学でサッカーを続けながら、もっとレベルアップしたくて通い始めました。チームの練習との両立も無理なくできて、スタメン争いに勝てるようになってきています。体の使い方を論理的に教えてもらえるので、自分でも考えてプレーできるようになりました。</p>
-        <div class="review-profile">
-          <div class="review-avatar">⚽</div>
-          <div>
-            <div class="review-name">R.N さん（21歳）</div>
-            <div class="review-pos">大学サッカー部 / MF / 4ヶ月継続</div>
-          </div>
-        </div>
+        <button class="review-more" onclick="this.previousElementSibling.classList.toggle('expanded');this.textContent=this.textContent==='もっと読む'?'閉じる':'もっと読む'">もっと読む</button>
+        <div class="review-google-label"><svg width="14" height="14" viewBox="0 0 48 48"><path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 5.1 29.6 3 24 3 12.4 3 3 12.4 3 24s9.4 21 21 21c10.5 0 20-7.6 20-21 0-1.4-.2-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l7 5.1C15 16.1 19.1 13 24 13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 5.1 29.6 3 24 3c-7.6 0-14.2 4.2-17.7 11.7z"/><path fill="#FBBC05" d="M24 45c5.8 0 11-2 14.9-5.2l-6.9-5.6C29.8 36 27 37 24 37c-6 0-11.1-4-12.9-9.5l-7 5.4C7.8 40.8 15.3 45 24 45z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.8c-.8 2.7-2.5 5-4.8 6.7l6.9 5.6C42.2 37.5 45 31.2 45 24c0-1.4-.2-2.7-.5-4z"/></svg>Google口コミより</div>
       </div>
       <div class="review-card">
-        <div class="review-stars">★★★★★</div>
+        <div class="review-card-top">
+          <div class="review-stars">★★★★★</div>
+          <span class="review-tag">アジリティ</span>
+        </div>
         <p class="review-text">切り返しのキレが明らかに変わりました。感覚統合トレーニングという概念を初めて知りましたが、これがここまで効くとは思いませんでした。対人でも負けなくなりました。</p>
-        <div class="review-profile">
-          <div class="review-avatar">⚽</div>
-          <div>
-            <div class="review-name">Y.H さん（28歳）</div>
-            <div class="review-pos">社会人リーグ / SH / 6ヶ月継続</div>
-          </div>
-        </div>
+        <button class="review-more" onclick="this.previousElementSibling.classList.toggle('expanded');this.textContent=this.textContent==='もっと読む'?'閉じる':'もっと読む'">もっと読む</button>
+        <div class="review-google-label"><svg width="14" height="14" viewBox="0 0 48 48"><path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 5.1 29.6 3 24 3 12.4 3 3 12.4 3 24s9.4 21 21 21c10.5 0 20-7.6 20-21 0-1.4-.2-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l7 5.1C15 16.1 19.1 13 24 13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 5.1 29.6 3 24 3c-7.6 0-14.2 4.2-17.7 11.7z"/><path fill="#FBBC05" d="M24 45c5.8 0 11-2 14.9-5.2l-6.9-5.6C29.8 36 27 37 24 37c-6 0-11.1-4-12.9-9.5l-7 5.4C7.8 40.8 15.3 45 24 45z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.8c-.8 2.7-2.5 5-4.8 6.7l6.9 5.6C42.2 37.5 45 31.2 45 24c0-1.4-.2-2.7-.5-4z"/></svg>Google口コミより</div>
       </div>
       <div class="review-card">
-        <div class="review-stars">★★★★★</div>
+        <div class="review-card-top">
+          <div class="review-stars">★★★★★</div>
+          <span class="review-tag">中学生</span>
+        </div>
         <p class="review-text">中学でサッカー部に入ってから伸び悩んでいたので、親に勧められて来ました。最初は難しそうと思っていたけど、丁寧に教えてもらえてすごく楽しいです。走るのが速くなったと友達にも言われるようになって、試合に出る機会も増えました。</p>
-        <div class="review-profile">
-          <div class="review-avatar">⚽</div>
-          <div>
-            <div class="review-name">S.O さん（19歳）</div>
-            <div class="review-pos">大学サッカー部 / CB / 2ヶ月継続</div>
-          </div>
-        </div>
+        <button class="review-more" onclick="this.previousElementSibling.classList.toggle('expanded');this.textContent=this.textContent==='もっと読む'?'閉じる':'もっと読む'">もっと読む</button>
+        <div class="review-google-label"><svg width="14" height="14" viewBox="0 0 48 48"><path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 5.1 29.6 3 24 3 12.4 3 3 12.4 3 24s9.4 21 21 21c10.5 0 20-7.6 20-21 0-1.4-.2-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l7 5.1C15 16.1 19.1 13 24 13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 5.1 29.6 3 24 3c-7.6 0-14.2 4.2-17.7 11.7z"/><path fill="#FBBC05" d="M24 45c5.8 0 11-2 14.9-5.2l-6.9-5.6C29.8 36 27 37 24 37c-6 0-11.1-4-12.9-9.5l-7 5.4C7.8 40.8 15.3 45 24 45z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.8c-.8 2.7-2.5 5-4.8 6.7l6.9 5.6C42.2 37.5 45 31.2 45 24c0-1.4-.2-2.7-.5-4z"/></svg>Google口コミより</div>
       </div>
       <div class="review-card">
-        <div class="review-stars">★★★★★</div>
+        <div class="review-card-top">
+          <div class="review-stars">★★★★★</div>
+          <span class="review-tag">保護者</span>
+        </div>
         <p class="review-text">いつもお世話になります！小学5年生になる息子のスポーツパフォーマンス向上に向けて、月に数度通っています。3ヶ月で明らかに姿勢や動きに変化が見られます。一生もの身体を手に入れるために引き続きよろしくお願いします！</p>
-        <div class="review-profile">
-          <div class="review-avatar">⚽</div>
-          <div>
-            <div class="review-name">O.Y さん</div>
-            <div class="review-pos">保護者 / 7ヶ月継続</div>
-          </div>
-        </div>
+        <button class="review-more" onclick="this.previousElementSibling.classList.toggle('expanded');this.textContent=this.textContent==='もっと読む'?'閉じる':'もっと読む'">もっと読む</button>
+        <div class="review-google-label"><svg width="14" height="14" viewBox="0 0 48 48"><path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 5.1 29.6 3 24 3 12.4 3 3 12.4 3 24s9.4 21 21 21c10.5 0 20-7.6 20-21 0-1.4-.2-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l7 5.1C15 16.1 19.1 13 24 13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 5.1 29.6 3 24 3c-7.6 0-14.2 4.2-17.7 11.7z"/><path fill="#FBBC05" d="M24 45c5.8 0 11-2 14.9-5.2l-6.9-5.6C29.8 36 27 37 24 37c-6 0-11.1-4-12.9-9.5l-7 5.4C7.8 40.8 15.3 45 24 45z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.8c-.8 2.7-2.5 5-4.8 6.7l6.9 5.6C42.2 37.5 45 31.2 45 24c0-1.4-.2-2.7-.5-4z"/></svg>Google口コミより</div>
       </div>
       <div class="review-card">
-        <div class="review-stars">★★★★★</div>
+        <div class="review-card-top">
+          <div class="review-stars">★★★★★</div>
+          <span class="review-tag">Jリーガー</span>
+        </div>
         <p class="review-text">ピラティスを取り入れてもらいながら、実際のプレーの動きに近いトレーニングをしてもらっています。パーソナルトレーニングで、より細かく指導してもらえるのでイメージもしやすく、意識するべきところも明確になります。回数を重ねていくことで実際の試合や練習で、自分のプレーにリンクするようになってきているという手応えを感じています。</p>
-        <div class="review-profile">
-          <div class="review-avatar">⚽</div>
-          <div>
-            <div class="review-name">N.A さん</div>
-            <div class="review-pos">Jリーガー / 6ヶ月継続</div>
-          </div>
-        </div>
-      </div>
-      <!-- marquee用 複製 -->
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">スプリントタイムが40mで0.3秒縮まりました。筋肉の使い方が根本的に変わったと実感しています。</p>
-        <div class="review-profile">
-          <div class="review-avatar">⚽</div>
-          <div>
-            <div class="review-name">T.S さん（26歳）</div>
-            <div class="review-pos">社会人リーグ / FW / 3ヶ月継続</div>
-          </div>
-        </div>
+        <button class="review-more" onclick="this.previousElementSibling.classList.toggle('expanded');this.textContent=this.textContent==='もっと読む'?'閉じる':'もっと読む'">もっと読む</button>
+        <div class="review-google-label"><svg width="14" height="14" viewBox="0 0 48 48"><path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 5.1 29.6 3 24 3 12.4 3 3 12.4 3 24s9.4 21 21 21c10.5 0 20-7.6 20-21 0-1.4-.2-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l7 5.1C15 16.1 19.1 13 24 13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 5.1 29.6 3 24 3c-7.6 0-14.2 4.2-17.7 11.7z"/><path fill="#FBBC05" d="M24 45c5.8 0 11-2 14.9-5.2l-6.9-5.6C29.8 36 27 37 24 37c-6 0-11.1-4-12.9-9.5l-7 5.4C7.8 40.8 15.3 45 24 45z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.8c-.8 2.7-2.5 5-4.8 6.7l6.9 5.6C42.2 37.5 45 31.2 45 24c0-1.4-.2-2.7-.5-4z"/></svg>Google口コミより</div>
       </div>
     </div>
   </div>
@@ -2325,7 +2330,7 @@
         <div class="contact-card">
           <div class="contact-card-title">キャンペーン情報</div>
           <p style="font-size:0.85rem;color:var(--text-l);line-height:1.85;">
-            🎉 現在、<strong style="color:var(--gold);">初回体験セッション 完全無料</strong>キャンペーン実施中。この機会にぜひお試しください。
+            現在、<strong style="color:var(--gold);">初回体験セッション 完全無料</strong>キャンペーン実施中。この機会にぜひお試しください。
           </p>
         </div>
       </div>
