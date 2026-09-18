@@ -1046,6 +1046,113 @@
       margin-top: 1.5rem;
     }
 
+    /* ── FEATURED PLAN CARD ── */
+    .plan-featured-card {
+      max-width: 420px;
+      margin: 0 auto 1.5rem;
+      border: 2px solid var(--gold);
+      border-radius: 20px;
+      background: #fdf8f2;
+      padding: 2rem 1.75rem;
+      text-align: center;
+      box-shadow: 0 4px 24px rgba(180,130,60,0.13);
+    }
+    .plan-popular-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 700;
+      border-radius: 50px;
+      padding: 0.35rem 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .plan-name {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.3rem;
+    }
+    .plan-sub {
+      font-size: 0.82rem;
+      color: var(--text-l);
+      margin-bottom: 1.25rem;
+    }
+    .plan-price-big {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1;
+    }
+    .plan-price-big span {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-l);
+      margin-left: 0.25rem;
+    }
+    .plan-per {
+      font-size: 0.85rem;
+      color: var(--text-l);
+      margin: 0.4rem 0 0.25rem;
+    }
+    .plan-desc {
+      font-size: 0.82rem;
+      color: var(--text-l);
+      margin-bottom: 1.5rem;
+    }
+    .plan-btn-line {
+      display: block;
+      background: #06c755;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 8px;
+      padding: 0.9rem 1.5rem;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .plan-btn-line:hover { opacity: 0.85; }
+    .plan-fee-note {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-l);
+      margin: 0.75rem 0 2rem;
+    }
+    /* ── STAFF NOMINATION ── */
+    .staff-nomination {
+      max-width: 480px;
+      margin: 0 auto 2rem;
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.5rem 1.5rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+    .staff-nomination-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .staff-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+      margin-bottom: 0.6rem;
+      font-size: 0.92rem;
+    }
+    .staff-row:last-child { margin-bottom: 0; }
+    .staff-row-price {
+      font-weight: 700;
+      color: var(--text);
+    }
+    .staff-row-price.consult {
+      color: var(--gold);
+    }
+
     /* ── PRICING TABLE ── */
     .pricing-scroll-hint {
       text-align: center;
@@ -2044,6 +2151,35 @@
       <h2 class="sec-title">料金プラン</h2>
       <span class="accent-line"></span>
       <p class="sec-lead" style="margin-top:0.75rem;">初回体験セッション（60分）は完全無料。まずはお気軽にご相談ください。</p>
+    </div>
+
+    <!-- Featured Plan Card -->
+    <div class="plan-featured-card">
+      <div class="plan-popular-badge">一番選ばれています</div>
+      <div class="plan-name">月額スタンダード</div>
+      <div class="plan-sub">月4回パーソナル ／ 担当お任せ</div>
+      <div class="plan-price-big">¥39,600<span>／月・税込</span></div>
+      <div class="plan-per">1回あたり ¥9,900</div>
+      <div class="plan-desc">週1ペースで着実に変わる定番プラン</div>
+      <a href="https://anjpgmfu.autosns.app/line" class="plan-btn-line" target="_blank" rel="noopener">LINEで相談する</a>
+    </div>
+    <p class="plan-fee-note">別途 入会金 ¥22,000（体験当日ご入会で ¥11,000）／ 事務手数料 ¥2,200</p>
+
+    <!-- Staff Nomination -->
+    <div class="staff-nomination">
+      <div class="staff-nomination-title">スタッフを指名する場合（月4回）</div>
+      <div class="staff-row">
+        <span>笠井トレーナー</span>
+        <span class="staff-row-price">¥44,000〜／月</span>
+      </div>
+      <div class="staff-row">
+        <span>矢野トレーナー</span>
+        <span class="staff-row-price">¥66,000〜／月</span>
+      </div>
+      <div class="staff-row">
+        <span>今井トレーナー</span>
+        <span class="staff-row-price consult">別途ご相談</span>
+      </div>
     </div>
 
     <p class="pricing-scroll-hint">スクロールで全体を表示 →</p>
